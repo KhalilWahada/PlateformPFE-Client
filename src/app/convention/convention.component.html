@@ -1,0 +1,121 @@
+<h3 id="title">Telecharger une convention de stage</h3>
+<br>
+
+
+
+<div id="test">
+
+<div *ngIf="con; else elseBlock">
+<div class="form__group field" >
+
+
+  <input type="input" class="form__field" placeholder="Name" name="name" id='name' required  value={{con.sexe}} disabled />
+  <label for="name" class="form__label">Sexe:</label>
+</div>
+<div class="form__group field">
+  <input type="input" class="form__field" placeholder="Name" name="name" id='name' value={{con.mail}} disabled/>
+  <label for="name" class="form__label">E-mail:</label>
+</div>
+<div class="form__group field">
+  <input type="input" class="form__field" placeholder="Name" name="name" id='name' value={{con.societe}} disabled/>
+  <label for="name" class="form__label">Société:</label>
+</div>
+<div class="form__group field">
+  <input type="input" class="form__field" placeholder="Name" name="name" id='name' value={{con.adresse}} disabled />
+  <label for="name" class="form__label">Adresse:</label>
+</div>
+<div class="form__group field">
+  <input type="input" class="form__field" placeholder="Name" name="name" id='name' value={{con.telephone}} disabled />
+  <label for="name" class="form__label">Téléphone:</label>
+</div>
+<div class="form__group field">
+  <input type="input" class="form__field" placeholder="Name" name="name" id='name' value={{con.mailsoc}} disabled/>
+  <label for="name" class="form__label">Adresse électronique:</label>
+</div>
+<div class="form__group field">
+  <input type="input" class="form__field" placeholder="Représentant société:" name="name" id='name'value={{con.repsoc}} disabled/>
+  <label for="name" class="form__label">Représentant société:</label>
+</div>
+<br>
+<table style="border-spacing: 10px;">
+  <tr>
+    <td><label class="c">Date debut du stage:</label></td>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <td><label class="c">Date fin du stage:</label></td>
+  </tr>
+  <tr>
+    <td><input type="date" class="c" value={{con.dds}} disabled/></td>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <td><input type="date" class="c"value={{con.dfs}} disabled/></td>
+  </tr>
+</table>
+
+</div>
+</div>
+<ng-template #elseBlock>
+
+ <form (ngSubmit)="onSubmit()" autocomplete="off">
+   
+
+ 
+
+  
+<div class="form__group field" >
+
+
+  <input type="input" class="form__field" placeholder="Name" name="name" id='name' required  [(ngModel)]="convention.sexe" [ngModelOptions]="{standalone: true}" />
+  <label for="name" class="form__label">Sexe:</label>
+</div>
+<div class="form__group field">
+  <input type="input" class="form__field" placeholder="Name" name="name" id='name' required [(ngModel)]="convention.mail" [ngModelOptions]="{standalone: true}"/>
+  <label for="name" class="form__label">E-mail:</label>
+</div>
+<div class="form__group field">
+  <input type="input" class="form__field" placeholder="Name" name="name" id='name' required [(ngModel)]="convention.societe" [ngModelOptions]="{standalone: true}"/>
+  <label for="name" class="form__label">Société:</label>
+</div>
+<div class="form__group field">
+  <input type="input" class="form__field" placeholder="Name" name="name" id='name' required [(ngModel)]="convention.adresse" [ngModelOptions]="{standalone: true}" />
+  <label for="name" class="form__label">Adresse:</label>
+</div>
+<div class="form__group field">
+  <input type="input" class="form__field" placeholder="Name" name="name" id='name' required [(ngModel)]="convention.telephone"[ngModelOptions]="{standalone: true}" />
+  <label for="name" class="form__label">Téléphone:</label>
+</div>
+<div class="form__group field">
+  <input type="input" class="form__field" placeholder="Name" name="name" id='name' required [(ngModel)]="convention.mailsoc"[ngModelOptions]="{standalone: true}"/>
+  <label for="name" class="form__label">Adresse électronique:</label>
+</div>
+<div class="form__group field">
+  <input type="input" class="form__field" placeholder="Représentant société:" name="name" id='name'required [(ngModel)]="convention.repsoc" [ngModelOptions]="{standalone: true}"/>
+  <label for="name" class="form__label">Représentant société:</label>
+</div>
+<br>
+<table style="border-spacing: 10px;">
+  <tr>
+    <td><label class="c">Date debut du stage:</label></td>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <td><label class="c">Date fin du stage:</label></td>
+  </tr>
+  <tr>
+    <td><input type="date" class="c" required [(ngModel)]="convention.dds"[ngModelOptions]="{standalone: true}"/></td>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <td><input type="date" class="c" required [(ngModel)]="convention.dfs" [ngModelOptions]="{standalone: true}"/></td>
+  </tr>
+</table>
+
+<br>
+
+
+<br>
+<button type="submit" class="btn btn-success" onclick="return confirm('Are you sure?')">Envoyer la demande</button>
+</form>
+<br>
+<div ><i class="fas fa-exclamation-triangle"id="gg" ></i> &nbsp;<label id="g"> Vous n'avez le droit que de demander une seule convention de stage avec une lettre d'affectation.</label></div>
+
+<div [hidden]="!submitted">
+  <h4>You submitted successfully!</h4>
+  <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
+</div>
+
+</ng-template>
