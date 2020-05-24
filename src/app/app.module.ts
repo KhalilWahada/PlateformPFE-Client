@@ -18,6 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ConventionComponent } from './convention/convention.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BasicAuthInterceptor } from './helper/basic-auth.interceptor';
+import { SessionComponent } from './session/session.component';
 
 
 
@@ -31,6 +32,7 @@ import { BasicAuthInterceptor } from './helper/basic-auth.interceptor';
     LoginComponent,
     HomeComponent,
     ConventionComponent,
+    SessionComponent,
 
   ],
   imports: [
