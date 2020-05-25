@@ -1,0 +1,141 @@
+<h3 id="title">Fiche PFE</h3>
+
+
+
+<div *ngIf="fic; else elseBlock">
+  <div *ngIf="acc; else eb2">
+    <div class="form__group field" >
+        
+        
+      <input type="input" class="form__field" placeholder="Name" name="name" id='name' required  value={{fic.titre}} disabled/>
+      <label for="name" class="form__label">Titre:</label>
+    </div>
+    <div class="form__group field" >
+    
+    
+      <input type="input" class="form__field" placeholder="Name" name="name" id='name' required  value={{fic.description}} disabled  />
+      <label for="name" class="form__label">Description:</label>
+    </div>
+    <br>
+    <button><a href="convention">Demande d'annuler ou modifier votre fiche</a></button>
+    
+  </div>
+
+  <ng-template #eb2>
+    <div *ngIf="dep; else eb3">
+      <form (ngSubmit)="onSubmit1(buttonType)" autocomplete="off">
+   
+
+ 
+
+  
+        <div class="form__group field" >
+        
+        
+          <input type="input" class="form__field" placeholder="Name" name="name" id='name' required  [(ngModel)]="fic.titre" [ngModelOptions]="{standalone: true}" />
+          <label for="name" class="form__label">Titre:</label>
+        </div>
+        <div class="form__group field" >
+        
+        
+          <input type="input" class="form__field" placeholder="Name" name="name" id='name' required  [(ngModel)]="fic.description" [ngModelOptions]="{standalone: true}" />
+          <label for="name" class="form__label">Description:</label>
+        </div>
+        
+        
+        <br>
+        
+        
+        <br>
+    
+        <button type="submit" class="btn btn-success" (click)="onSubmit1('depose')" id="dep">Save your changes</button>
+        
+        </form>
+        <br>
+    
+        
+        <div [hidden]="!submitted">
+          <h4>You submitted successfully!</h4>
+          <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
+        </div>
+
+    </div>
+    <ng-template #eb3>
+
+    <form (ngSubmit)="onSubmit1(buttonType)" autocomplete="off">
+   
+
+ 
+
+  
+      <div class="form__group field" >
+      
+      
+        <input type="input" class="form__field" placeholder="Name" name="name" id='name' required  [(ngModel)]="fic.titre" [ngModelOptions]="{standalone: true}" />
+        <label for="name" class="form__label">Titre:</label>
+      </div>
+      <div class="form__group field" >
+      
+      
+        <input type="input" class="form__field" placeholder="Name" name="name" id='name' required  [(ngModel)]="fic.description" [ngModelOptions]="{standalone: true}" />
+        <label for="name" class="form__label">Description:</label>
+      </div>
+      
+      
+      <br>
+      
+      
+      <br>
+  
+      <button type="submit" class="btn btn-success" (click)="onSubmit1('depose')" id="dep">Deposit</button>
+      <button type="button" class="btn btn-success" (click)="onSubmit1('save')" id="sav">save</button>
+      </form>
+      <br>
+  
+      
+      <div [hidden]="!submitted">
+        <h4>You submitted successfully!</h4>
+        <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
+      </div>
+    </ng-template>
+
+  </ng-template>
+
+</div>
+<ng-template #elseBlock>
+<form (ngSubmit)="onSubmit(buttonType)" autocomplete="off">
+   
+
+ 
+
+  
+    <div class="form__group field" >
+    
+    
+      <input type="input" class="form__field" placeholder="Name" name="name" id='name' required  [(ngModel)]="fiche.titre" [ngModelOptions]="{standalone: true}" />
+      <label for="name" class="form__label">Titre:</label>
+    </div>
+    <div class="form__group field" >
+    
+    
+      <input type="input" class="form__field" placeholder="Name" name="name" id='name' required  [(ngModel)]="fiche.description" [ngModelOptions]="{standalone: true}" />
+      <label for="name" class="form__label">Description:</label>
+    </div>
+    
+    
+    <br>
+    
+    
+    <br>
+
+    <button type="submit" class="btn btn-success" (click)="onSubmit('depose')" id="dep">Deposit</button>
+    <button type="button" class="btn btn-success" (click)="onSubmit('save')" id="sav">save</button>
+    </form>
+    <br>
+
+    
+    <div [hidden]="!submitted">
+      <h4>You submitted successfully!</h4>
+      <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
+    </div>
+  </ng-template>
