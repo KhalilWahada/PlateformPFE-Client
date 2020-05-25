@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Convention } from '../convention';
-import { ConventionService } from '../convention.service';
+import { Convention } from '../_models/convention';
+import { ConventionService } from '../_services/convention.service';
 import { Router } from '@angular/router';
 
 @Component({

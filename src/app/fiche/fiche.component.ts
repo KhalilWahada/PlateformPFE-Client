@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Fiche } from '../fiche';
-import { FicheService } from '../fiche.service';
+import { Fiche } from '../_models/fiche';
+import { FicheService } from '../_services/fiche.service';
 import { Router } from '@angular/router';
 
 @Component({

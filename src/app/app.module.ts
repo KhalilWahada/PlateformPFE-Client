@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
-import { RestapiService } from './restapi.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { LayoutModule } from '@angular/cdk/layout';
@@ -17,7 +16,7 @@ import { MatListModule } from '@angular/material/list';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ConventionComponent } from './convention/convention.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { BasicAuthInterceptor } from './helper/basic-auth.interceptor';
+import { BasicAuthInterceptor } from './_helpers/basic-auth.interceptor';
 
 import { FicheComponent } from './fiche/fiche.component';
 import { SessionComponent } from './session/session.component';
@@ -52,7 +51,7 @@ import { SessionComponent } from './session/session.component';
     MatListModule,
     BrowserAnimationsModule
   ],
-  providers: [RestapiService,
+  providers: [
     { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })

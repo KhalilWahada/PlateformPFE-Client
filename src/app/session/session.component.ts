@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SessionService } from '../services/session.service';
-import { Session } from '../class/session';
+import { SessionService } from '../_services/session.service';
+import { Session } from '../_models/session';
 import { Router } from '@angular/router';
 
 @Component({
