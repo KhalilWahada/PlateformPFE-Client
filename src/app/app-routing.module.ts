@@ -6,19 +6,25 @@ import { ConventionComponent } from './convention/convention.component';
 import { HttpClientModule }    from '@angular/common/http';
 
 import {FicheComponent} from './fiche/fiche.component';
-
+import { AuthGuard } from './_helpers/auth.guard';
 import { SessionComponent } from './session/session.component';
 
 
 
 const routes: Routes = [
-  { path: '', component: HomeComponent, children: [
+  { path: 'login', component: LoginComponent },
+  { path: '', component: HomeComponent,canActivate: [AuthGuard], children: [
     {path: 'convention', component: ConventionComponent },
     {path: 'session', component: SessionComponent },
     {path: 'fiche', component: FicheComponent },
 
+    
+  
 
-  ] }
+] },
+      // otherwise redirect to home
+      { path: '**', redirectTo: '' }
+    
 ];
 
 @NgModule({

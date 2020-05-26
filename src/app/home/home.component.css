@@ -29,8 +29,11 @@
 }
 
 #page-wrapper {
-    width: 100%;        
-    padding: 0;
+    width: auto;        
+    margin-left: 3cm;
+    margin-top: 2cm;
+
+
     background-color: #fff;
 }
 

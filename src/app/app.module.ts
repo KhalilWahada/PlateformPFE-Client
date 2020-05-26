@@ -17,6 +17,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ConventionComponent } from './convention/convention.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BasicAuthInterceptor } from './_helpers/basic-auth.interceptor';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ErrorInterceptor } from './_helpers/error.interceptor';
 
 import { FicheComponent } from './fiche/fiche.component';
 import { SessionComponent } from './session/session.component';
@@ -39,6 +41,7 @@ import { SessionComponent } from './session/session.component';
 
   ],
   imports: [
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
@@ -52,7 +55,9 @@ import { SessionComponent } from './session/session.component';
     BrowserAnimationsModule
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true }],
+    { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
