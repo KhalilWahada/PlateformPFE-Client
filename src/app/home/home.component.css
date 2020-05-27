@@ -8,6 +8,15 @@
 #c{
     background-color: #438eb9;
 }
+#tt{
+    color: white;
+    position: fixed;
+    top: 20px;
+    left: 240px;
+    width:190px;
+    height:65px;
+
+}
 .d{
     position: fixed;
 
@@ -31,7 +40,7 @@
 #page-wrapper {
     width: auto;        
     margin-left: 3cm;
-    margin-top: 2cm;
+    margin-top: 1cm;
 
 
     background-color: #fff;
