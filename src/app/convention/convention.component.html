@@ -54,7 +54,7 @@
 </div>
 <ng-template #elseBlock>
 
- <form (ngSubmit)="onSubmit()" autocomplete="off">
+ <form (ngSubmit)="onSubmit()" autocomplete="off" ngNativeValidate>
    
 
  
@@ -62,10 +62,13 @@
   
 <div class="form__group field" >
 
-
-  <input type="input" class="form__field" placeholder="Name" name="name" id='name' required  [(ngModel)]="convention.sexe" [ngModelOptions]="{standalone: true}" />
+  <select name="cars" id="cars" class="form__field" [(ngModel)]="convention.sexe" [ngModelOptions]="{standalone: true}" required>
+    <option value="masculin">Masculin</option>
+    <option value="feminin">Feminin</option>
+  </select>
   <label for="name" class="form__label">Sexe:</label>
 </div>
+
 <div class="form__group field">
   <input type="input" class="form__field" placeholder="Name" name="name" id='name' required [(ngModel)]="convention.mail" [ngModelOptions]="{standalone: true}"/>
   <label for="name" class="form__label">E-mail:</label>

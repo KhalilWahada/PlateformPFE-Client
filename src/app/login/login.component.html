@@ -13,7 +13,7 @@
             <div class="form-group">
     
     
-                <input type="email" class="form-control" formControlName="username" id="inputEmail" placeholder="Username" [ngClass]="{ 'is-invalid': submitted && f.username.errors }">
+                <input type="email" class="form-control" formControlName="username" id="inputEmail" placeholder="Identifiant" [ngClass]="{ 'is-invalid': submitted && f.username.errors }">
     
                 
             </div>
@@ -23,11 +23,11 @@
                 <input type="password" class="form-control" formControlName="password" id="inputPassword" placeholder="Mot de passe"[ngClass]="{ 'is-invalid': submitted && f.password.errors }">
     
                 <div *ngIf="submitted && f.username.errors && f.password.errors; else elseBlock">
-                    <div *ngIf="f.username.errors.required" ><label class="alert">Username et mdp sont obligatoires.</label></div>
+                    <div *ngIf="f.username.errors.required" ><label class="alert">Identifiant et mdp sont obligatoires.</label></div>
                 </div>
                 <ng-template #elseBlock>
                 <div *ngIf="submitted && f.username.errors">
-                    <div *ngIf="f.username.errors.required"><label class="alert">Username est obligatoire.</label></div>
+                    <div *ngIf="f.username.errors.required"><label class="alert">Identifiant est obligatoire.</label></div>
                 </div>
                 <div *ngIf="submitted && f.password.errors">
                     <div *ngIf="f.password.errors.required"><label class="alert">Mdp est obligatoire.</label></div>

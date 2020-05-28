@@ -1,0 +1,35 @@
+<br>
+<form (ngSubmit)="onSubmit()">
+   
+
+ 
+
+  
+    <div class="form__group field" >
+    
+    
+      <input type="password" class="form__field" placeholder="Name" name="name" id='name' required  [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}" />
+      <label for="name" class="form__label">Mot de passe:</label>
+    </div>
+    <div class="form__group field" >
+    
+    
+      <input type="password" class="form__field" placeholder="Name" name="name"  required [(ngModel)]="repeat" [ngModelOptions]="{standalone: true}"/>
+      <label for="name" class="form__label">Repeater mot de pass:</label>
+    </div>
+    
+    
+    <br>
+    <label class="alert" *ngIf=al>not the same</label>
+    <label class="alert" *ngIf=al2>minimum 6 charchters</label>
+    <br>
+
+    <button type="submit" class="btn btn-success" >Changer mot de passe</button>
+    </form>
+    <br>
+
+    
+    <div [hidden]="!submitted">
+      <h4>You submitted successfully!</h4>
+      <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
+    </div>

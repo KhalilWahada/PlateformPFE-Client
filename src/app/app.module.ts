@@ -22,6 +22,7 @@ import { ErrorInterceptor } from './_helpers/error.interceptor';
 
 import { FicheComponent } from './fiche/fiche.component';
 import { SessionComponent } from './session/session.component';
+import { ChangepwdComponent } from './changepwd/changepwd.component';
 
 
 
@@ -38,6 +39,7 @@ import { SessionComponent } from './session/session.component';
     ConventionComponent,
     SessionComponent,
     FicheComponent,
+    ChangepwdComponent,
 
   ],
   imports: [

@@ -8,6 +8,7 @@ import { HttpClientModule }    from '@angular/common/http';
 import {FicheComponent} from './fiche/fiche.component';
 import { AuthGuard } from './_helpers/auth.guard';
 import { SessionComponent } from './session/session.component';
+import { ChangepwdComponent } from'./changepwd/changepwd.component'
 
 
 
@@ -17,6 +18,7 @@ const routes: Routes = [
     {path: 'convention', component: ConventionComponent },
     {path: 'session', component: SessionComponent },
     {path: 'fiche', component: FicheComponent },
+    {path: 'changepwd', component: ChangepwdComponent },
 
     
   

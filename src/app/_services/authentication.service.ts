@@ -8,6 +8,7 @@ import { User } from '../_models';
 export class AuthenticationService {
     private currentUserSubject: BehaviorSubject<User>;
     public currentUser: Observable<User>;
+    private baseUrl = 'http://localhost:8080/updatepwd';
 
     constructor(private http: HttpClient) {
         this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
@@ -34,4 +35,9 @@ export class AuthenticationService {
         localStorage.removeItem('currentUser');
         this.currentUserSubject.next(null);
     }
+
+    updatepwd(value: any): Observable<Object> {
+        return this.http.put(`${this.baseUrl}`, value);
+      }
+    
 }
