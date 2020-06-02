@@ -25,6 +25,10 @@ import { FicheComponent } from './fiche/fiche.component';
 import { SessionComponent } from './session/session.component';
 import { ChangepwdComponent } from './changepwd/changepwd.component';
 import { ListsessionComponent } from './session/listsession/listsession.component';
+import { ListficheComponent } from './fiche/listfiche/listfiche.component';
+import { MatTableModule } from '@angular/material/table';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatSortModule } from '@angular/material/sort';
 
 
 
@@ -43,6 +47,7 @@ import { ListsessionComponent } from './session/listsession/listsession.componen
     FicheComponent,
     ChangepwdComponent,
     ListsessionComponent,
+    ListficheComponent,
 
   ],
   imports: [
@@ -57,8 +62,12 @@ import { ListsessionComponent } from './session/listsession/listsession.componen
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    MatTableModule,
     BrowserAnimationsModule,
-    MatTabsModule
+    MatTabsModule,
+    MatFormFieldModule,
+    MatSortModule
+
 
   ],
   providers: [
