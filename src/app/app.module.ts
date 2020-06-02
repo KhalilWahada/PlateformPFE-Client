@@ -19,10 +19,12 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BasicAuthInterceptor } from './_helpers/basic-auth.interceptor';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ErrorInterceptor } from './_helpers/error.interceptor';
+import {MatTabsModule} from '@angular/material/tabs';
 
 import { FicheComponent } from './fiche/fiche.component';
 import { SessionComponent } from './session/session.component';
 import { ChangepwdComponent } from './changepwd/changepwd.component';
+import { ListsessionComponent } from './session/listsession/listsession.component';
 
 
 
@@ -40,6 +42,7 @@ import { ChangepwdComponent } from './changepwd/changepwd.component';
     SessionComponent,
     FicheComponent,
     ChangepwdComponent,
+    ListsessionComponent,
 
   ],
   imports: [
@@ -54,7 +57,9 @@ import { ChangepwdComponent } from './changepwd/changepwd.component';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatTabsModule
+
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },

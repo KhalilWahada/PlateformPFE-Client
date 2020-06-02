@@ -13,7 +13,9 @@ export class SessionService {
     return this.http.post(`${this.baseUrl}/create`, session);
   }
   getsessions(): Observable<any> {
-    return this.http.get(`${this.baseUrl}`);
+    return this.http.get(`${this.baseUrl}/all`);
   }
-  
+  getsessionsall(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/al`);
+  }
 }

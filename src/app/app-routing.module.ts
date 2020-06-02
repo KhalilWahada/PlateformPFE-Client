@@ -9,6 +9,7 @@ import {FicheComponent} from './fiche/fiche.component';
 import { AuthGuard } from './_helpers/auth.guard';
 import { SessionComponent } from './session/session.component';
 import { ChangepwdComponent } from'./changepwd/changepwd.component'
+import { ListsessionComponent } from './session/listsession/listsession.component';
 
 
 
@@ -19,6 +20,7 @@ const routes: Routes = [
     {path: 'session', component: SessionComponent },
     {path: 'fiche', component: FicheComponent },
     {path: 'changepwd', component: ChangepwdComponent },
+    {path: 'test', component: ListsessionComponent },
 
     
   
