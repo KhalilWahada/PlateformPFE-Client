@@ -19,7 +19,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BasicAuthInterceptor } from './_helpers/basic-auth.interceptor';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ErrorInterceptor } from './_helpers/error.interceptor';
-import {MatTabsModule} from '@angular/material/tabs';
+import { MatTabsModule } from '@angular/material/tabs';
 
 import { FicheComponent } from './fiche/fiche.component';
 import { SessionComponent } from './session/session.component';
@@ -27,8 +27,9 @@ import { ChangepwdComponent } from './changepwd/changepwd.component';
 import { ListsessionComponent } from './session/listsession/listsession.component';
 import { ListficheComponent } from './fiche/listfiche/listfiche.component';
 import { MatTableModule } from '@angular/material/table';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSortModule } from '@angular/material/sort';
+import { DialogComponent } from './dialog/dialog.component';
 
 
 
@@ -48,6 +49,7 @@ import { MatSortModule } from '@angular/material/sort';
     ChangepwdComponent,
     ListsessionComponent,
     ListficheComponent,
+    DialogComponent,
 
   ],
   imports: [
