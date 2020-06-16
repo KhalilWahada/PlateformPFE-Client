@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../_services/authentication.service';
 import { User } from '../_models/user';
 import { Router } from '@angular/router';
-import { first } from 'rxjs/operators';
+import { first, delayWhen } from 'rxjs/operators';
 @Component({
   selector: 'app-changepwd',
   templateUrl: './changepwd.component.html',
@@ -36,8 +36,9 @@ export class ChangepwdComponent implements OnInit {
   updatepwd() {
     this.authenticationService.updatepwd(this.user)
       .subscribe(data => console.log(data), error => console.log(error));
+      
      // this.authenticationService.login(this.user.code,this.user.password);
-      this.authenticationService.login(this.user.code, this.user.password)
+      this.authenticationService.loginchange(this.user.code, this.user.password)
       .pipe(first())
       .subscribe(
           data => {

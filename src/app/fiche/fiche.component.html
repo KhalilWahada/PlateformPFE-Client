@@ -1,3 +1,11 @@
+<br>
+<button (click)="showDialog = !showDialog" class="btn">Open</button>
+
+
+<app-dialog [(visible)]="showDialog">
+	<h1>add</h1>
+	<button (click)="showDialog = !showDialog" class="btn">Close</button>
+</app-dialog>
 <h3 id="title">Fiche PFE</h3>
 
 

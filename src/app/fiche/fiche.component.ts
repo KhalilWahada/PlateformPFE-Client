@@ -16,6 +16,7 @@ export class FicheComponent implements OnInit {
   fic: Fiche;
   dep:boolean =false;
   acc:boolean = false;
+  showDialog: boolean = false;
 
 
   constructor(private ficheService: FicheService,
