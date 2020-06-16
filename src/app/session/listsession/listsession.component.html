@@ -18,4 +18,27 @@
           </tbody>
         </table>
       </div>
+      <button (click)="showDialog = !showDialog" class="btn">Open</button>
 
+
+      <app-dialog [(visible)]="showDialog">
+        <h1>add</h1>
+        <div>
+          <form (ngSubmit)="onSubmit()">
+            <div class="form-group ">
+              <label for="nom">nom</label>
+              <input type="text" class="form-control" id="nom" required [(ngModel)]="session.nom" name="nom">
+            </div>
+        
+            <div class="form-group">
+              <label for="name">First Name</label>
+              <input type="date" class="form-control" id="dateDebut" required [(ngModel)]="session.dateDebut" name="dateDebut">
+            </div>
+           
+            <button type="submit" class="btn btn-success">Submit</button>
+          </form>
+        </div>
+          
+        <button (click)="showDialog = !showDialog" class="btn">Close</button>
+        
+      </app-dialog>

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { SessionService } from '../_services/session.service';
 import { Session } from '../_models/session';
 import { Router } from '@angular/router';
-
 @Component({
   selector: 'app-session',
   templateUrl: './session.component.html',

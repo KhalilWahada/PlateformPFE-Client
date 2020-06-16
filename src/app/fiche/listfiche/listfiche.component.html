@@ -19,3 +19,11 @@
     <tr mat-row *matRowDef="let element; columns: displayedColumns;"></tr>
   </table>
   <button mat-button (click)="openDialog()">Launch dialog</button>
+  <button (click)="showDialog = !showDialog "  class="btn">Open</button>
+
+
+  <app-dialog [(visible)]="showDialog">
+    <h1>add</h1>
+
+    <button (click)="showDialog = !showDialog" class="btn">Close</button>
+  </app-dialog>

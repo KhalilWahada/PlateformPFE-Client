@@ -1,3 +1,11 @@
+
+import { FlatpickrModule } from 'angularx-flatpickr';
+
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { SoutenanceComponent } from './soutenance/soutenance.component';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -30,16 +38,19 @@ import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSortModule } from '@angular/material/sort';
 import { DialogComponent } from './dialog/dialog.component';
-
-
-
-
+import { SatDatepickerModule, SatNativeDateModule } from 'saturn-datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import{MatInputModule}from '@angular/material/input';
 
 
 
 
 @NgModule({
   declarations: [
+   
+    SoutenanceComponent,
+    
     AppComponent,
     LoginComponent,
     HomeComponent,
@@ -51,8 +62,15 @@ import { DialogComponent } from './dialog/dialog.component';
     ListficheComponent,
     DialogComponent,
 
+
   ],
   imports: [
+    
+    MatInputModule,
+    MatNativeDateModule, MatFormFieldModule, MatDatepickerModule,
+    MatButtonModule,
+    SatDatepickerModule, SatNativeDateModule,
+    MatDialogModule,
     ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
@@ -68,10 +86,14 @@ import { DialogComponent } from './dialog/dialog.component';
     BrowserAnimationsModule,
     MatTabsModule,
     MatFormFieldModule,
-    MatSortModule
+    MatSortModule,
+    NgbModalModule,
+    FlatpickrModule.forRoot(),
+    CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory })
 
 
   ],
+
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },

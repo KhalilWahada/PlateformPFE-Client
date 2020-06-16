@@ -27,7 +27,9 @@
     "angularx-flatpickr": "^6.3.1",
     "date-fns": "^2.14.0",
     "flatpickr": "^4.6.3",
+    "mat-range-datepicker": "^1.0.5",
     "rxjs": "~6.5.4",
+    "saturn-datepicker": "^8.0.5",
     "tslib": "^1.13.0",
     "zone.js": "~0.10.2"
   },

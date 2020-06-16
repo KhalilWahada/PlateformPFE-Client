@@ -47,5 +47,6 @@ export class ListficheComponent implements OnInit {
  
   this.dialog.open(SessionComponent,dialogConfig);
 }
+showDialog: boolean = false;
 
 }

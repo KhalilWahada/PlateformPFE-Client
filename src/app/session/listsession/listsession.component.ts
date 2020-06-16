@@ -36,7 +36,30 @@ export class ListsessionComponent implements OnInit {
       }, error => console.log(error));
      
   }
+  showDialog: boolean = false;
+  submitted = false;
+  newSession(): void {
+    this.submitted = false;
+    this.session = new Session();
+  }
+  passtest(nsession : Session)
+  {
+    this.sessionService.createSession(nsession).subscribe((data) => 
+      console.log(data));
+    this.newSession();
+  }
+  save() {
+    this.sessionService.createSession(this.session)
+    .subscribe(data => console.log(data), error => console.log(error));
+    this.session = new Session ();
+   // this.goto();
 
+  }
+
+  onSubmit() {
+    this.submitted = true;
+    this.save();    
+  }
 
 
 }
