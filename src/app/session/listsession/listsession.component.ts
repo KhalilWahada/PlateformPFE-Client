@@ -23,7 +23,8 @@ export class ListsessionComponent implements OnInit {
   }
   sessions: Array<Session>;
    
-  constructor(private sessionService : SessionService) { }
+  constructor(    
+    private sessionService : SessionService) { }
   session : Session; 
   ngOnInit(): void {
     this.session = new Session();
@@ -36,6 +37,6 @@ export class ListsessionComponent implements OnInit {
      
   }
 
-  
+
 
 }

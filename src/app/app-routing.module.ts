@@ -11,6 +11,8 @@ import { SessionComponent } from './session/session.component';
 import { ChangepwdComponent } from'./changepwd/changepwd.component'
 import { ListsessionComponent } from './session/listsession/listsession.component';
 import { ListficheComponent } from './fiche/listfiche/listfiche.component';
+import { SoutenanceComponent } from './soutenance/soutenance.component';
+import { DataResolverService } from './data-resolver.service';
 
 
 
@@ -23,6 +25,10 @@ const routes: Routes = [
     {path: 'changepwd', component: ChangepwdComponent },
     {path: 'test', component: ListsessionComponent },
     {path: 'all', component: ListficheComponent },
+    {path: 'sou', component: SoutenanceComponent ,
+    resolve: {
+      sessions: DataResolverService
+    }},
 
     
   
