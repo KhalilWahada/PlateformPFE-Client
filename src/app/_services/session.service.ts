@@ -12,10 +12,15 @@ export class SessionService {
   createSession(session: Object): Observable<Object>  {
     return this.http.post(`${this.baseUrl}/create`, session);
   }
-  getsessions(): Observable<any> {
+  getsessions(): any {
     return this.http.get(`${this.baseUrl}/all`);
   }
   getsessionsall(): Observable<any> {
     return this.http.get(`${this.baseUrl}/al`);
   }
+ 
+  deletesession(id: number): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/delete/${id}`, { responseType: 'text' });
+  }
+  
 }

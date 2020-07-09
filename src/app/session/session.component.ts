@@ -10,13 +10,14 @@ import { Router } from '@angular/router';
 export class SessionComponent implements OnInit {
   session: Session = new Session();
   submitted = false;
+  satDatePicker: { begin: Date; end: Date; };
+  dateRangeDisp: any;
 
   constructor(private sessionService: SessionService,
     private router: Router) { }
 
   ngOnInit() {
   }
-
   newSession(): void {
     this.submitted = false;
     this.session = new Session();
@@ -28,6 +29,9 @@ export class SessionComponent implements OnInit {
     this.newSession();
   }
   save() {
+    var tomorrow = this.dateRangeDisp.begin;
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    this.session.dateDebut = tomorrow;
     this.sessionService.createSession(this.session)
     .subscribe(data => console.log(data), error => console.log(error));
     this.session = new Session ();
@@ -42,4 +46,17 @@ export class SessionComponent implements OnInit {
 goto() {
     this.router.navigate(['/']);
   }
+  saveDate(event: any) {
+    // look at how the date is emitted from save
+    console.log(event.target.value.begin);
+    //this.session.dateDebut = event.target.value.begin;
+    console.log(event.target.value.end);
+
+    // change in view
+    this.dateRangeDisp = event.target.value;
+   
+
+    // save date range as string value for sending to db
+    // ... save to db
+}
 }

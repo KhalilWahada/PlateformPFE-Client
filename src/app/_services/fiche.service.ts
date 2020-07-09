@@ -11,7 +11,7 @@ export class FicheService {
   private baseUrl2 = 'http://localhost:8080/etud/updatefiche';
   private baseUrl3 = 'http://localhost:8080/etud/updatefichedep';
   private baseUrl4 = 'http://localhost:8080/etud/getfiche';
-  private baseUrl5 = 'http://localhost:8080/dds/fiches/all';
+  private baseUrl5 = 'http://localhost:8080/dds';
 
   
   constructor(private http: HttpClient) { }
@@ -32,6 +32,9 @@ export class FicheService {
     return this.http.get(`${this.baseUrl4}`);
   }
   getddsFiche(): Observable<any> {
-    return this.http.get(`${this.baseUrl5}`);
+    return this.http.get(`${this.baseUrl5}/fiches/all`);
+  }
+  validatefiche(id: number): any {
+    return this.http.put(`${this.baseUrl5}/validation/${id}`, { responseType: 'text' });
   }
 }

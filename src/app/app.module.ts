@@ -42,6 +42,9 @@ import { SatDatepickerModule, SatNativeDateModule } from 'saturn-datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import{MatInputModule}from '@angular/material/input';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { CreatesoutenanceComponent } from './soutenance/createsoutenance/createsoutenance.component';
+import { FichedetailsComponent } from './fichedetails/fichedetails.component';
 
 
 
@@ -61,11 +64,13 @@ import{MatInputModule}from '@angular/material/input';
     ListsessionComponent,
     ListficheComponent,
     DialogComponent,
+    CreatesoutenanceComponent,
+    FichedetailsComponent,
 
 
   ],
   imports: [
-    
+    MatPaginatorModule,
     MatInputModule,
     MatNativeDateModule, MatFormFieldModule, MatDatepickerModule,
     MatButtonModule,

@@ -4,16 +4,17 @@ import { take, map } from 'rxjs/operators';
 
 import { Observable } from 'rxjs';
 import { SessionService } from './_services/session.service';
+import { SoutenanceService } from './_services/soutenance.service';
 @Injectable({
   providedIn: 'root'
 })
 export class DataResolverService implements Resolve <Observable<any>>{
 
-  constructor(private ds: SessionService) { }
+  constructor(private ds: SoutenanceService) { }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot){
-    return this.ds.getsessionsall().pipe(
-      map(sessions => sessions)
+    return this.ds.getlistsoutenance().pipe(
+      map(soutenances => soutenances)
     )
   }
 }

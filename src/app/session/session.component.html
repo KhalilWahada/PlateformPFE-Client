@@ -1,23 +1,27 @@
-<div class="container">
-  <div class="row">
-    <form (ngSubmit)="onSubmit()">
-      <div class="form-group ">
-        <label for="nom">nom</label>
-        <input type="text" class="form-control" id="nom" required [(ngModel)]="session.nom" name="nom">
-      </div>
-
-      <div class="form-group">
-        <label for="name">First Name</label>
-        <input type="date" class="form-control" id="dateDebut" required [(ngModel)]="session.dateDebut"
-          name="dateDebut">
-      </div>
-
-      <div class="form-group">
-        <input matInput placeholder="" [satDatepicker]="picker">
-        <sat-datepicker #picker [rangeMode]="true"></sat-datepicker>
-        <sat-datepicker-toggle matSuffix [for]="picker"></sat-datepicker-toggle>
-      </div>
-      <button type="submit" class="btn btn-success">Submit</button>
-    </form>
-  </div>
+  <mat-dialog-content>
+ <div>
+    <mat-form-field class="dialogform">
+      <mat-label>Titre du Session :</mat-label>
+      <input matInput type="text" id="nom" required [(ngModel)]="session.nom" name="nom">
+         </mat-form-field>
+ </div>
+<div>
+<mat-form-field class="dialogform">
+  <mat-label>Duree du Session : </mat-label>
+  <input matInput
+      required
+      placeholder=""
+      [satDatepicker]="picker"
+      [value]="dateRangeDisp"
+      (dateChange)="saveDate($event)"
+      >
+  <sat-datepicker #picker [rangeMode]="true"></sat-datepicker>
+  <sat-datepicker-toggle matSuffix [for]="picker"></sat-datepicker-toggle>
+</mat-form-field>
 </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="onSubmit()">NEW</button>
+</mat-dialog-actions>
+  

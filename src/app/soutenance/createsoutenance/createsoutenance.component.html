@@ -1,0 +1,23 @@
+<div>
+    
+  <div>
+           <mat-form-field class="dialogform">
+        <mat-label>Duree en minute :</mat-label>
+        <input matInput type="number" id="nom" min="30" max="120" step ="15" required   [(ngModel)]="soutenance.duree" name="nom">
+           </mat-form-field>
+   </div>
+   <div> 
+      <mat-form-field class="dialogform">
+        <mat-label>Date no time :</mat-label>
+        <input matInput [matDatepicker]="picker2" [(ngModel)]="soutenance.dateSoutenance"  disabled>
+        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2  disabled="false" color="primary"></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close>Cancel</button>
+        <button mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="onSubmit()">NEW</button>
+      </mat-dialog-actions>
+  
+
+  </div>
