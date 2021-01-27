@@ -1,0 +1,31 @@
+<div class="panel-body">
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>titre du Session :</th>
+        <th>Date Debut :</th>
+        <th>Date FIN :</th>
+        <th>Nbr fiche :</th>
+        <th>View</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let sess of sessions ">
+
+        <td>{{sess.nom}}</td>
+        <td>{{sess.dateDebut}}</td>
+        <td>{{sess.dateFin}}</td>
+        <td>{{sess.fiches.length}}
+        </td>
+<td><button (click)="opencurrent(sess)" class="btn">Open</button>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<button (click)="currentsession()" class="btn">open current Session</button>
+<button (click)="openDialog()" class="btn">new </button>
+<br><br>
+
+

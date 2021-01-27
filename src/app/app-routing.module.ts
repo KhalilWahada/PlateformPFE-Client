@@ -3,43 +3,54 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { ConventionComponent } from './convention/convention.component';
-import { HttpClientModule }    from '@angular/common/http';
-
-import {FicheComponent} from './fiche/fiche.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FicheComponent } from './fiche/fiche.component';
 import { AuthGuard } from './_helpers/auth.guard';
-import { SessionComponent } from './session/session.component';
-import { ChangepwdComponent } from'./changepwd/changepwd.component'
-import { ListsessionComponent } from './session/listsession/listsession.component';
-import { ListficheComponent } from './fiche/listfiche/listfiche.component';
-import { SoutenanceComponent } from './soutenance/soutenance.component';
-import { DataResolverService } from './data-resolver.service';
-import { CreatesoutenanceComponent } from './soutenance/createsoutenance/createsoutenance.component';
+import { SessionComponent } from './dds/session/session.component';
+import { ChangepwdComponent } from './changepwd/changepwd.component'
+import { ListficheComponent } from './dds/listfiche/listfiche.component';
+import { DataResolverService } from './_services/data-resolver.service';
+import { FichenontraiterComponent } from './dds/fichenontraiter/fichenontraiter.component';
+import { FicheencoursComponent } from './dds/ficheencours/ficheencours.component';
+import { ListconventionComponent } from './dds/listconvention/listconvention.component';
+import { ListsessionComponent } from './dds/listsession/listsession.component';
+import { SoutenanceComponent } from './dds/soutenance/soutenance.component';
+import { CreatesoutenanceComponent } from './dds/createsoutenance/createsoutenance.component';
+import { ListdemandeComponent } from './dds/listdemande/listdemande.component';
 
 
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: '', component: HomeComponent,canActivate: [AuthGuard], children: [
-    {path: 'convention', component: ConventionComponent },
-    {path: 'session', component: SessionComponent },
-    {path: 'fiche', component: FicheComponent },
-    {path: 'changepwd', component: ChangepwdComponent },
-    {path: 'test', component: ListsessionComponent },
-    {path: 'all', component: ListficheComponent },
-    {path: 'csou', component: CreatesoutenanceComponent },
+  {
+    path: '', component: HomeComponent, canActivate: [AuthGuard], children: [
+      { path: 'convention', component: ConventionComponent },
+      { path: 'session', component: SessionComponent },
+      { path: 'fiche', component: FicheComponent },
+      { path: 'changepwd', component: ChangepwdComponent },
+      { path: 'sessions', component: ListsessionComponent },
+      { path: 'fiches', component: ListficheComponent },
+      { path: 'soutenances/create', component: CreatesoutenanceComponent },
+      { path: 'fiches/en_attente', component: FichenontraiterComponent },
+      { path: 'fiches/en_cours', component: FicheencoursComponent },
+      { path: 'conventions', component: ListconventionComponent },
+      { path: 'demande', component: ListdemandeComponent },
 
-    {path: 'sou', component: SoutenanceComponent ,
-    resolve: {
-      soutenances: DataResolverService
-    }},
+      {
+        path: 'soutenances', component: SoutenanceComponent,
+        resolve: {
+          soutenances: DataResolverService
+        }
+      },
 
-    
-  
 
-] },
-      // otherwise redirect to home
-      { path: '**', redirectTo: '' }
-    
+
+
+    ]
+  },
+  // otherwise redirect to home
+  { path: '**', redirectTo: '' }
+
 ];
 
 @NgModule({

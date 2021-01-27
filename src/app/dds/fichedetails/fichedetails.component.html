@@ -1,0 +1,37 @@
+
+<div id="title">{{data.fichedetails.titre}}</div>
+
+<mat-dialog-content>
+
+    <mat-vertical-stepper>
+        <mat-step >
+            <ng-template matStepLabel> <div id ="title"> information Generale :</div></ng-template>  
+            <div id="information">Description :</div>
+            <div id="details"> {{data.fichedetails.description}}</div>
+            <div id="information">Etudiant :</div>
+            <div id="details"> {{data.fichedetails.etudiant.lastname}} {{data.fichedetails.etudiant.name}}</div>
+            <div id="information">Encadrant Scolaire :</div>
+            <div id ="details"> {{data.fichedetails.enseignant.name}}</div>
+
+        </mat-step>
+        <mat-step >
+            <ng-template matStepLabel> <div id ="title"> Societe :</div></ng-template>  
+
+            <div id="information">Nom du Societe :</div>
+            <div id="details"> {{data.fichedetails.soc.nomSociete}}</div>
+            <div id="information">adresse du Societe :</div>
+            <div id="details"> {{data.fichedetails.soc.adresseSociete}}</div>
+            <div id="information">Email du Societe :</div>
+            <div id="details"> {{data.fichedetails.soc.emailSociete}}</div>
+            <div id="information">Encadrant du Societe :</div>
+            <div id="details"> {{data.fichedetails.esoc.last_name}} {{data.fichedetails.esoc.name}}</div>
+            <div id="information">Email de l'encandrant :</div>
+            <div id="details"> {{data.fichedetails.esoc.email}} {{data.fichedetails.esoc.email}}</div>
+
+        </mat-step>
+        <mat-step >
+            <ng-template matStepLabel> <div id ="title"> Details technique :</div></ng-template>  
+        </mat-step>
+    </mat-vertical-stepper>
+</mat-dialog-content>
+

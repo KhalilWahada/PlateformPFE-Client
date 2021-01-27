@@ -1,0 +1,16 @@
+demande de {{data.fichedetails.amf.etat}}
+<div class="row">
+    <div class="left">
+        <app-fichedetails></app-fichedetails>
+    </div>
+    <div class="divider"></div>
+    <div class="right"> <br>
+        <p>
+            {{data.fichedetails.amf.cause}}</p>
+    </div>
+</div>
+<mat-dialog-actions  align="end">
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="Accepter()">Accepter Demande</button>
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="Refuser()">Refuser Demande</button>
+ 
+</mat-dialog-actions>

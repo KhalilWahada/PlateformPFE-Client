@@ -13,7 +13,7 @@ export class FicheService {
   private baseUrl4 = 'http://localhost:8080/etud/getfiche';
   private baseUrl5 = 'http://localhost:8080/dds';
 
-  
+
   constructor(private http: HttpClient) { }
 
   createfiche(convention: Object): Observable<Object> {
@@ -35,6 +35,6 @@ export class FicheService {
     return this.http.get(`${this.baseUrl5}/fiches/all`);
   }
   validatefiche(id: number): any {
-    return this.http.put(`${this.baseUrl5}/validation/${id}`, { responseType: 'text' });
+    return this.http.put(`${this.baseUrl5}/fiche/validation/${id}`, { responseType: 'text' });
   }
 }

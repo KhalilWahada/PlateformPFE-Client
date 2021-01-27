@@ -22,5 +22,11 @@ export class SoutenanceService {
   createSoutenance(soutenance: Object): Observable<Object>  {
     return this.http.post(`${this.baseUrl}/affecter`, soutenance);
   }
-  
+  modifdate(id: number,soutenance: Object): any {
+    return this.http.put(`${this.baseUrl}/${id}`, soutenance );
+  }
+  anuulersoutenance(id: number): any {
+    return this.http.delete(`${this.baseUrl}/annuler/${id}`);
+  }
+ 
 }

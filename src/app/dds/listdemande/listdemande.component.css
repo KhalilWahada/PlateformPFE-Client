@@ -1,0 +1,32 @@
+
+  .row  {
+    display: flex;  }
+  .left {
+
+    width:60%;
+
+  }
+  .divider {
+    width: 1.5px;
+    margin: 10px 0; 
+    background: crimson;
+    
+  }
+  .right {
+    padding-left: 5px;
+    text-align: center;
+    margin-top: 100px;
+
+    width:40%;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 15px;
+    letter-spacing: 0px;
+    word-spacing: 0px;
+    color: #000000;
+    font-weight: 400;
+    text-decoration: none solid rgb(68, 68, 68);
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+  }
+  

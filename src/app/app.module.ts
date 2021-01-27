@@ -1,9 +1,7 @@
 
-import { FlatpickrModule } from 'angularx-flatpickr';
 
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
-import { SoutenanceComponent } from './soutenance/soutenance.component';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserModule } from '@angular/platform-browser';
@@ -30,30 +28,43 @@ import { ErrorInterceptor } from './_helpers/error.interceptor';
 import { MatTabsModule } from '@angular/material/tabs';
 
 import { FicheComponent } from './fiche/fiche.component';
-import { SessionComponent } from './session/session.component';
+import { SessionComponent } from './dds/session/session.component';
 import { ChangepwdComponent } from './changepwd/changepwd.component';
-import { ListsessionComponent } from './session/listsession/listsession.component';
-import { ListficheComponent } from './fiche/listfiche/listfiche.component';
+import { ListficheComponent } from './dds/listfiche/listfiche.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSortModule } from '@angular/material/sort';
 import { DialogComponent } from './dialog/dialog.component';
 import { SatDatepickerModule, SatNativeDateModule } from 'saturn-datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import{MatInputModule}from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material/input';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { CreatesoutenanceComponent } from './soutenance/createsoutenance/createsoutenance.component';
-import { FichedetailsComponent } from './fichedetails/fichedetails.component';
-
+import { FichedetailsComponent } from './dds/fichedetails/fichedetails.component';
+import { FlatpickrModule } from 'angularx-flatpickr';
+import { FichenontraiterComponent } from './dds/fichenontraiter/fichenontraiter.component';
+import { FicheencoursComponent } from './dds/ficheencours/ficheencours.component';
+import { ListconventionComponent } from './dds/listconvention/listconvention.component';
+import { ListsessionComponent } from './dds/listsession/listsession.component';
+import { CreatesoutenanceComponent } from './dds/createsoutenance/createsoutenance.component';
+import { SoutenanceComponent } from './dds/soutenance/soutenance.component';
+import { EtudiantdetailsComponent } from './dds/etudiantdetails/etudiantdetails.component';
+import { MatStepperModule } from '@angular/material/stepper';
+import { CdkStepperModule } from '@angular/cdk/stepper';
+import { ListesoutenanceComponent } from './dds/listesoutenance/listesoutenance.component';
+import { ListdemandeComponent } from './dds/listdemande/listdemande.component';
+import { SessioncurrentComponent } from './dds/sessioncurrent/sessioncurrent.component';
+import { ValidationficheComponent } from './dds/validationfiche/validationfiche.component';
+import { HistoryComponent } from './dds/history/history.component';
+import {MatSelectModule} from '@angular/material/select';
 
 
 
 @NgModule({
   declarations: [
-   
+
     SoutenanceComponent,
-    
+
     AppComponent,
     LoginComponent,
     HomeComponent,
@@ -66,10 +77,21 @@ import { FichedetailsComponent } from './fichedetails/fichedetails.component';
     DialogComponent,
     CreatesoutenanceComponent,
     FichedetailsComponent,
+    FichenontraiterComponent,
+    FicheencoursComponent,
+    ListconventionComponent,
+    EtudiantdetailsComponent,
+    ListesoutenanceComponent,
+    ListdemandeComponent,
+    SessioncurrentComponent,
+    ValidationficheComponent,
+    HistoryComponent,
 
 
   ],
   imports: [
+    CdkStepperModule,
+    MatStepperModule,
     MatPaginatorModule,
     MatInputModule,
     MatNativeDateModule, MatFormFieldModule, MatDatepickerModule,
@@ -92,6 +114,7 @@ import { FichedetailsComponent } from './fichedetails/fichedetails.component';
     MatTabsModule,
     MatFormFieldModule,
     MatSortModule,
+    MatSelectModule,
     NgbModalModule,
     FlatpickrModule.forRoot(),
     CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory })

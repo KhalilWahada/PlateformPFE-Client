@@ -1,0 +1,59 @@
+.ds-skill {
+   
+    width: 200px;
+    height: 100px;
+  }
+ .ds-skill h6 {
+    margin-bottom: 5px;
+    font-weight: 700;
+    color: crimson;
+  }
+ .ds-skill .skill h6 {
+    font-weight: 400;
+    font-size: 8px;
+    letter-spacing: 0.05em;
+    margin: 4px 0;
+    color: white;
+  }
+
+
+  #title {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 28px;
+    letter-spacing: 2.4px;
+    word-spacing: 1px;
+    color: #000000;
+    font-weight: 400;
+    text-decoration: underline solid rgb(68, 68, 68);
+    font-style: normal;
+    font-variant: small-caps;
+    text-transform: capitalize;
+    }
+  #information {
+    font-family: Georgia, serif;
+    font-size: 16px;
+    letter-spacing: 1.6px;
+    word-spacing: 1.6px;
+    color: #000000;
+    font-weight: 400;
+    text-decoration: none solid rgb(68, 68, 68);
+    font-style: italic;
+    font-variant: normal;
+    text-transform: none;
+    }
+    #details {
+        font-family: "Times New Roman", Times, serif;
+        font-size: 15px;
+        letter-spacing: 0px;
+        word-spacing: 0px;
+        color: #000000;
+        font-weight: 400;
+        text-decoration: none solid rgb(68, 68, 68);
+        font-style: normal;
+        font-variant: normal;
+        text-transform: none;
+        }
+        
+        .mat-step .mat-icon {
+            display: none !important;
+        }

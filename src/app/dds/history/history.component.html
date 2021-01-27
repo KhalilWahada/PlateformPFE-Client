@@ -1,0 +1,39 @@
+
+<div class="row">
+    <div class="left">
+        <app-fichedetails></app-fichedetails>
+    </div>
+    <div class="divider"></div>
+    <div class="right" > <br>
+        <div class="col-md-12 example-title">
+            <h2>History de modification</h2>
+        </div>
+        <div class="container-fluid">
+
+            <div class="row example-centered">
+                <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
+                    <ul class="timeline timeline-centered" *ngFor="let modification of data.fichedetails.history">
+                        <li class="timeline-item">
+                            <div class="timeline-info">
+                                <p>{{modification.date|  date:'EEEE , HH:mm'}}</p>
+                            </div>
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3 class="timeline-title">{{modification.action}} by {{modification.user}}</h3>
+                                <p>{{modification.note}}</p>
+                            </div>
+                        </li>
+                        <li class="timeline-item period">
+                            <div class="timeline-info"></div>
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h2 class="timeline-title">{{modification.date|date:'MMMM -dd- yyy'}}</h2>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
